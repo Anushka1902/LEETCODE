@@ -1,6 +1,11 @@
-from math import gcd
+#from math import gcd
 class Solution:
     def countPairs(self, nums: List[int], k: int) -> int:
+        def gcd(a,b):
+            if b==0:
+                return a
+            else:
+                return gcd(b,a%b)
         res=0
         n=len(nums)
         di=defaultdict(int)
