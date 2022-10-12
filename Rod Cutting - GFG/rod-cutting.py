@@ -3,17 +3,15 @@
 class Solution:
     def cutRod(self, price, n):
         #code here
-        INT_min=-3267
-        val=[0 for _ in range(n+1)]
+        val=[0 for x in range(n+1)]
         val[0]=0
+        minimum=-3267
         for i in range(1,n+1):
-            max_val=INT_min
+            maxval=minimum
             for j in range(i):
-                max_val=max(max_val,price[j]+val[i-j-1])
-            val[i]=max_val
+                maxval=max(maxval,price[j]+val[i-j-1])
+            val[i]=maxval
         return val[n]
-
-
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
